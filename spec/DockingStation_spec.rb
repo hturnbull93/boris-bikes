@@ -31,12 +31,4 @@ describe DockingStation do
     station.dock_bike(bike)
     expect(station.bike).to eq bike
   end
-
-  describe Bike do
-    subject(:bike) { described_class.new }
-
-    it "#working? method returns true" do
-      expect(bike.working?).to eq true
-    end
-  end
 end
