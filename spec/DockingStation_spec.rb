@@ -1,11 +1,11 @@
 require 'boris_bikes'
 
 describe DockingStation do
-  it "responds to #release_bike" do
-    expect(DockingStation.new).to respond_to(:release_bike)
-  end
-
   subject(:station) { described_class.new }
+
+  it "responds to #release_bike" do
+    expect(station).to respond_to(:release_bike)
+  end
 
   describe "#release_bike" do
     it "returns a instance of the Bike class" do
@@ -13,24 +13,30 @@ describe DockingStation do
     end
   end
 
-  describe "bike" do
-    it "#working? method returns true" do
-      expect(station.release_bike.working?).to eq true
-    end
-  end
-
-  it "it responds to the #dock_bike method with 1 argument" do
-      expect(DockingStation.new).to respond_to(:dock_bike).with(1).argument
-  end
-
-end
-
-describe Bike do
-
-  subject(:bike) { described_class.new }
-
-  it "Users bike is docked using the #dock_bike function" do
-    expect(DockingStation.new.dock_bike(bike)).to have_attributes(:docked_bike => bike)
+  it "responds to #dock_bike with 1 argument" do
+    expect(station).to respond_to(:dock_bike).with(1).argument
   end
   
+  it "responds to #bike" do
+    expect(station).to respond_to(:bike)
+  end
+
+  it "#docks_bike docks the passed bike" do
+    bike = Bike.new
+    expect(station.dock_bike(bike)).to eq bike
+  end
+
+  it "returns the docked bike" do
+    bike = Bike.new
+    station.dock_bike(bike)
+    expect(station.bike).to eq bike
+  end
+
+  describe Bike do
+    subject(:bike) { described_class.new }
+
+    it "#working? method returns true" do
+      expect(bike.working?).to eq true
+    end
+  end
 end
