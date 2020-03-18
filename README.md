@@ -19,17 +19,40 @@ As a person,
 So that I can use a good bike,
 I'd like to see if a bike is working
 
+As a member of the public
+So I can return bikes I've hired
+I want to dock my bike at the docking station
+
+As a member of the public
+So I can decide whether to use the docking station
+I want to see a bike that has been docked
+
 
 Objects | Messages
 ---------|----------
- Person | B1 
- Docking station | release_bike 
- Bike | check_bike_working? 
+ Person | 
+ Public | 
+ Docking station | release_bike<br>dock_bike<br>bike_docked?
+ Bike | working? 
 
  Diagram:
 
  ![diagram](./images/user-stories-diagram2.png)
  
+
+
+
+
+Objects | Messages
+---------|----------
+ Public | B1 
+ Docking station | dock_bike 
+ Bike | check_bike_working? 
+
+ Diagram:
+
+ ![diagram](./images/user-stories-diagram2.png)
+
  ## Errors
  
  ```
@@ -45,3 +68,4 @@ docking_station = DockingStation.new
 This is a problem because the constant 'DockingStation' does not yet exist, or in code speak it has not been initialized.
 
 We could solve this error by creating a constant called 'DockingStation'.
+
