@@ -7,8 +7,15 @@ describe DockingStation do
     expect(station).to respond_to(:release_bike)
   end
 
+
   describe "#release_bike" do
+    it "returns error if no bike available" do
+      expect{station.release_bike}.to raise_error "No bikes available."
+    end
+
     it "returns a instance of the Bike class" do
+      bike = Bike.new
+      station.dock_bike(bike)
       expect(station.release_bike).to be_instance_of(Bike)
     end
   end
@@ -16,7 +23,7 @@ describe DockingStation do
   it "responds to #dock_bike with 1 argument" do
     expect(station).to respond_to(:dock_bike).with(1).argument
   end
-  
+
   it "responds to #bike" do
     expect(station).to respond_to(:bike)
   end
