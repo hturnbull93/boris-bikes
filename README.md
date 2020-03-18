@@ -38,34 +38,3 @@ Objects | Messages
  Diagram:
 
  ![diagram](./images/user-stories-diagram2.png)
- 
-
-
-
-
-Objects | Messages
----------|----------
- Public | B1 
- Docking station | dock_bike 
- Bike | check_bike_working? 
-
- Diagram:
-
- ![diagram](./images/user-stories-diagram2.png)
-
- ## Errors
- 
- ```
-NameError: uninitialized constant DockingStation
-    from (irb):2
-    from /home/ec2-user/.rvm/rubies/ruby-2.6.3/bin/irb:23:in `<main>'
-```
-
-irb line 2 states : 
-```
-docking_station = DockingStation.new
-```
-This is a problem because the constant 'DockingStation' does not yet exist, or in code speak it has not been initialized.
-
-We could solve this error by creating a constant called 'DockingStation'.
-
