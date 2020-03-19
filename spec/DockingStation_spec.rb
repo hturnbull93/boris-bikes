@@ -25,11 +25,9 @@ describe DockingStation do
     end
     
     it "returns error if already has bike docked" do
-      bike = Bike.new
-      another_station = DockingStation.new
-      another_station.dock_bike(bike)
-      another_bike = Bike.new
-      expect {another_station.dock_bike(another_bike)}.to raise_error "Dock full."
+      full_station = DockingStation.new
+      20.times { full_station.dock_bike(Bike.new) }
+      expect {full_station.dock_bike(Bike.new)}.to raise_error "Dock full."
     end
 
     it "docks the passed bike" do

@@ -9,7 +9,7 @@ class DockingStation
   end
 
   def dock_bike(bike)
-    fail "Dock full." if @storage.size == 1
+    fail "Dock full." if @storage.size == 20
     @storage << bike
   end
 
