@@ -1,6 +1,6 @@
 class DockingStation
   def initialize
-    @capacity = 20
+    @storage = []
   end
 
   def release_bike
@@ -9,12 +9,11 @@ class DockingStation
   end
 
   def dock_bike(bike)
-    fail "Dock full." if @bikes_docked == 1
-    @bikes_docked = 1
-    @bike = bike
+    fail "Dock full." if @storage.size == 1
+    @storage << bike
   end
 
-  attr_reader :bike, :capacity
+  attr_reader :storage
 end
 
 class Bike

@@ -7,10 +7,6 @@ describe DockingStation do
     expect(station).to respond_to(:release_bike)
   end
 
-  it "has a default capacity of 20 bikes" do
-    expect(station.capacity).to eq 20
-  end
-
   describe "#release_bike" do
     it "returns error if no bike available" do
       expect{station.release_bike}.to raise_error "No bikes available."
