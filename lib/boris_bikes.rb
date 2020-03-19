@@ -1,3 +1,5 @@
+require 'bike'
+
 class DockingStation
   def initialize
     @storage = []
@@ -25,10 +27,4 @@ class DockingStation
     @storage.empty?
   end
 
-end
-
-class Bike
-  def working?
-    true
-  end
 end
