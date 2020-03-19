@@ -7,9 +7,7 @@ This is a project to emulate a Santander Cycle system in Ruby.
 - Programming fluently
 - Ability to debug anything
 
-## User stories and domain model
-
-User stories:
+## User stories
 
 As a person,
 So that I can use a bike,
@@ -27,12 +25,24 @@ As a member of the public
 So I can decide whether to use the docking station
 I want to see a bike that has been docked
 
+As a maintainer of the system,
+So that I can control the distribution of bikes,
+I'd like docking stations not to accept more bikes than their capacity.
+
+As a system maintainer,
+So that I can plan the distribution of bikes,
+I want a docking station to have a default capacity of 20 bikes.
+
+
+
+## Domain Model
 
 Objects | Messages
 ---------|----------
  Person | 
- Public | 
- Docking station | release_bike<br>dock_bike<br>bike_docked?
+ Member of Public | 
+ System Maintainer | 
+ DockingStation | release_bike <br> dock_bike <br> @storage (array of stored bikes) <br>
  Bike | working? 
 
  Diagram:
