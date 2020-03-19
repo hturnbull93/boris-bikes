@@ -1,15 +1,16 @@
 require 'boris_bikes'
 
 describe Bike do
+  subject(:bike) { described_class.new }
+  
   it "responds to #working?" do
-    expect(Bike.new).to respond_to(:working?)
+    expect(bike).to respond_to(:working?)
   end
 
-  subject(:bike) { described_class.new }
 
   describe "bike" do
-    it "#working? method returns true" do
-      expect(bike.working?).to eq true
+    it "to be working (#working?)" do
+      expect(bike).to be_working
     end
   end
 
