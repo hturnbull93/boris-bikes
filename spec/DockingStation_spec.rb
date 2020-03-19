@@ -34,17 +34,17 @@ describe DockingStation do
 
     it "docks the passed bike" do
       bike = Bike.new
-      expect(station.dock_bike(bike)).to eq bike
+      expect(station.dock_bike(bike)).to include bike
     end
   end
 
-  it "responds to #bike" do
-    expect(station).to respond_to(:bike)
+  it "responds to #storage" do
+    expect(station).to respond_to(:storage)
   end
 
   it "returns the docked bike" do
     bike = Bike.new
     station.dock_bike(bike)
-    expect(station.bike).to eq bike
+    expect(station.storage).to include bike
   end
 end

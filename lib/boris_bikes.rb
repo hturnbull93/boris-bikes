@@ -4,8 +4,8 @@ class DockingStation
   end
 
   def release_bike
-    fail "No bikes available." unless @bike
-    @bike
+    fail "No bikes available." if @storage.empty?
+    @storage.pop
   end
 
   def dock_bike(bike)
