@@ -59,7 +59,7 @@ Objects | Messages
  Person | 
  Member of Public | 
  System Maintainer | 
- DockingStation | release_bike <br> dock_bike(bike, broken?) <br> @storage (array of stored bikes) <br>
+ DockingStation | release_bike <br> dock_bike(bike, broken) <br> @storage (array of stored bikes) <br>
  Bike | working? <br> mark_broken
 
 ### Diagram:
