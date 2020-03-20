@@ -9,7 +9,7 @@ describe DockingStation do
 
   describe "#release_bike" do
     it "returns error if no bike available" do
-      expect{station.release_bike}.to raise_error "No bikes available."
+      expect{ station.release_bike }.to raise_error "No bikes available."
     end
 
     it "returns a instance of the Bike class" do
@@ -18,12 +18,12 @@ describe DockingStation do
       expect(station.release_bike).to be_instance_of(Bike)
     end
   end
-  
+
   describe "#dock_bike" do
     it "responds with 1 argument" do
       expect(station).to respond_to(:dock_bike).with(1).argument
     end
-    
+
     it "returns error if already has bike docked" do
       full_station = DockingStation.new
       DockingStation::DEFAULT_CAPACITY.times { full_station.dock_bike(Bike.new) }
@@ -44,5 +44,18 @@ describe DockingStation do
     bike = Bike.new
     station.dock_bike(bike)
     expect(station.storage).to include bike
+  end
+
+  describe "variable capacity" do
+    it "can be initialized with a capacity for bikes, at 50" do
+      cap_50_station = DockingStation.new(50)
+      50.times { cap_50_station.dock_bike(Bike.new) }
+      expect { cap_50_station.dock_bike(Bike.new) }.to raise_error "Dock full."
+    end
+    it "when not set, defaults to 20" do
+      cap_20_station = DockingStation.new
+      DockingStation::DEFAULT_CAPACITY.times { cap_20_station.dock_bike(Bike.new) }
+      expect { cap_20_station.dock_bike(Bike.new) }.to raise_error "Dock full."
+    end
   end
 end
