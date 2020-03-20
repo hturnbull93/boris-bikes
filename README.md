@@ -52,7 +52,6 @@ User stories are brief descriptions of a feature told from the perspective of a 
 > I'd like docking stations to accept returning bikes (broken or not).
 
 
-
 ## Domain Model
 
 Objects | Messages
@@ -60,10 +59,9 @@ Objects | Messages
  Person | 
  Member of Public | 
  System Maintainer | 
- DockingStation | release_bike <br> dock_bike(broken?) <br> @storage (array of stored bikes) <br>
- Bike | working? 
+ DockingStation | release_bike <br> dock_bike(bike, broken?) <br> @storage (array of stored bikes) <br>
+ Bike | working? <br> mark_broken
 
- Diagram:
- <!-- Need to update -->
+### Diagram:
 
- ![diagram](./images/user-stories-diagram2.png)
+ ![diagram](./images/domain_model_diagram.png)
