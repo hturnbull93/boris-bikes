@@ -47,5 +47,6 @@ Objects | Messages
  Bike | working? 
 
  Diagram:
+ <!-- Need to update -->
 
  ![diagram](./images/user-stories-diagram2.png)

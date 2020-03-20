@@ -26,7 +26,7 @@ describe DockingStation do
     
     it "returns error if already has bike docked" do
       full_station = DockingStation.new
-      20.times { full_station.dock_bike(Bike.new) }
+      full_station.DEFAULT_CAPACITY.times { full_station.dock_bike(Bike.new) }
       expect {full_station.dock_bike(Bike.new)}.to raise_error "Dock full."
     end
 
