@@ -9,13 +9,16 @@ class DockingStation
   end
 
   def release_bike
-    fail "No bikes available." if empty?
+    fail 'No bikes available.' if empty?
+    fail 'No working bikes.' unless @storage.last.working?
     @storage.pop
   end
 
-  def dock_bike(bike)
-    fail "Dock full." if full?
+  def dock_bike(bike, broken = false)
+    fail 'Dock full.' if full?
     @storage << bike
+    bike.mark_broken if broken
+    @storage
   end
 
   attr_reader :storage
