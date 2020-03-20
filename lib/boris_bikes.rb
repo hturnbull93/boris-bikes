@@ -1,9 +1,9 @@
-require_relative 'bike'
+require_relative 'bike.rb'
 
 class DockingStation
+  DEFAULT_CAPACITY = 20
   def initialize
     @storage = []
-    @DEFAULT_CAPACITY = 20
   end
 
   def release_bike
@@ -21,7 +21,7 @@ class DockingStation
   private
   
   def full?
-    @storage.size >= @DEFAULT_CAPACITY
+    @storage.size >= DEFAULT_CAPACITY
   end
   
   def empty?
