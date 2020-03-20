@@ -14,10 +14,10 @@ class DockingStation
     @storage.pop
   end
 
-  def dock_bike(bike, broken = false)
+  def dock_bike(bike, broken? = false)
     fail 'Dock full.' if full?
     @storage << bike
-    bike.mark_broken if broken
+    bike.mark_broken if broken?
     @storage
   end
 
